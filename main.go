@@ -18,9 +18,17 @@ func main() {
 
 	// Exercise loops
 	var resultLoop1 int = sumOfFirst(3)
-	fmt.Println(resultLoop1)
+	fmt.Println(resultLoop1) // result 6
 	var resultLoop2 bool = isPrime(1)
-	fmt.Println(resultLoop2)
+	fmt.Println(resultLoop2) // result false
+
+	// Pointer
+	var d int = 2
+	double(&d)
+	fmt.Println(d) // result 4
+	name := "Aod"
+	appendGreeting(&name)
+	fmt.Println(name)
 }
 
 func greeting(name string) string {
@@ -62,4 +70,12 @@ func isPrime(n int) bool {
 		}
 	}
 	return true
+}
+
+func double(d *int) {
+	*d = *d * 2
+}
+
+func appendGreeting(s *string) {
+	*s = fmt.Sprintf("Hi, %s", *s)
 }
