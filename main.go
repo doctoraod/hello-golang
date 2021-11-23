@@ -15,6 +15,12 @@ func main() {
 	// Exercise conditions
 	var result1 bool = isOdd(10)
 	fmt.Println(result1)
+
+	// Exercise loops
+	var resultLoop1 int = sumOfFirst(3)
+	fmt.Println(resultLoop1)
+	var resultLoop2 bool = isPrime(1)
+	fmt.Println(resultLoop2)
 }
 
 func greeting(name string) string {
@@ -35,4 +41,25 @@ func greetingWithAgeAndDrink(name string, age uint, drink string) string {
 
 func isOdd(n int) bool {
 	return n%2 != 0
+}
+
+func sumOfFirst(n int) int {
+	var result int = 0
+	for i := 1; i <= n; i++ {
+		result = result + i
+	}
+	return result
+}
+
+// A prime number is a number greater than 1 with only two factors – themselves and 1
+func isPrime(n int) bool {
+	if n <= 1 {
+		return false
+	}
+	for i := 2; i < n; i++ {
+		if n%i == 0 {
+			return false
+		}
+	}
+	return true
 }
