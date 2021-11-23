@@ -1,24 +1,30 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	var message string = greeting("Aod", "Suvichan")
-	fmt.Println(message)
-	var num int = add(1, 2)
-	fmt.Println(num)
-	const (
-		sunday = iota
-		monday
-	)
-	fmt.Println(sunday)
-	fmt.Println(monday)
+	var message1 string = greeting("Aod")
+	fmt.Println(message1)
+	var message2 string = greetingWithAge("Aod", 30)
+	fmt.Println(message2)
+	var message3 string = greetingWithAgeAndDrink("Aod", 30, "Pepsi")
+	fmt.Println(message3)
 }
 
-func greeting(firstName, lastName string) string {
-	return "Hello, " + firstName + lastName
+func greeting(name string) string {
+	return "Hello, " + name
 }
 
-func add(a, b int) int {
-	return a + b
+// greetingWithAge("Pallat", 30) should return "Hello, Pallat. You are 30 years old."
+func greetingWithAge(name string, age uint) string {
+	var result string = fmt.Sprintf("Hello, %s. You are %d years old.", name, age)
+	return result
+}
+
+// // greetingWithAgeAndDrink("Pallat", 30, "Cola") should return "Hello, Pallat. You are 30 years old and your favorite drink is Cola."
+func greetingWithAgeAndDrink(name string, age uint, drink string) string {
+	var result string = fmt.Sprintf("Hello, %s. You are %d years old and your favorite drink is %s.", name, age, drink)
+	return result
 }
