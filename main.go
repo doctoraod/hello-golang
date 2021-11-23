@@ -5,12 +5,16 @@ import (
 )
 
 func main() {
+	// Exercise function
 	var message1 string = greeting("Aod")
 	fmt.Println(message1)
 	var message2 string = greetingWithAge("Aod", 30)
 	fmt.Println(message2)
 	var message3 string = greetingWithAgeAndDrink("Aod", 30, "Pepsi")
 	fmt.Println(message3)
+	// Exercise conditions
+	var result1 bool = isOdd(10)
+	fmt.Println(result1)
 }
 
 func greeting(name string) string {
@@ -27,4 +31,8 @@ func greetingWithAge(name string, age uint) string {
 func greetingWithAgeAndDrink(name string, age uint, drink string) string {
 	var result string = fmt.Sprintf("Hello, %s. You are %d years old and your favorite drink is %s.", name, age, drink)
 	return result
+}
+
+func isOdd(n int) bool {
+	return n%2 != 0
 }
