@@ -29,6 +29,12 @@ func main() {
 	name := "Aod"
 	appendGreeting(&name)
 	fmt.Println(name)
+
+	s := [0,3]string{"apple", "banana", "coconut", "durian", "elderberries", "figs", "grapes"}
+
+	// TODO: slice the s to the new variable, only "apple", "banana" and "coconut" needed
+
+	fmt.Print(s)
 }
 
 func greeting(name string) string {
